@@ -4,6 +4,7 @@ Chart is forked from [Original Source](https://github.com/openebs/charts/tree/ma
 ### Prerequisite
 1) kubectl should be installed and configured in machine from which deployment will be made
 2) helm 3 should be installed and configured
+3) nodes should be assigned label ```nodeType=storage```
 
 
 ## Installation
@@ -23,9 +24,9 @@ $ make install
 $ make uninstall
 ```
 ## make targets
-1) clean[Cleans the local fs]
-2) install[install the chart]
-3) uninstall[uninstalls the chart]
-4) debug[generate the deployment yamls]
-5) createns[create namespace]
-6) removens[delete namespace]
+1) **clean**: Cleans the local fs
+2) **install**: install the chart
+3) **uninstall**: uninstalls the chart
+4) **debug**: generate the deployment yamls
+5) **createns**: create namespace
+6) **removens**: delete namespace
