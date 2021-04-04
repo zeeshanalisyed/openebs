@@ -2,7 +2,7 @@
 # email: zeeshanelsyed@gmail.com
 ns ?= openebs
 # helm repo add openebs https://openebs.github.io/charts
-chart ?= openebs-ns
+chart ?= openebs
 release ?= openebs-storage
 lpath ?=./
 valuesFile ?= values.yaml
@@ -35,7 +35,7 @@ help:
 	 2) $(green)make $/{target} ns=namespace chart=chartname$(end)\n"
 	
 createns:
-  ifneq ("(NotFound)",$(findstring "`kubectl get ns $(ns)`",(NotFound)))
+  ifeq ("(NotFound)",$(findstring "`kubectl get ns $(ns)`",(NotFound)))
 	kubectl create ns $(ns)
   endif
 removens:
@@ -45,7 +45,7 @@ removens:
 clean:
 	rm -r $(release).dry-run.yaml 
 install:
-	$(MAKE) createns && helm install $(release) $(lpath) --namespace=$(ns) | cat > $(release).dry-run.yaml 
+	$(MAKE) createns && helm install $(release) --namespace=$(ns) $(lpath) -f values.yaml --skip-crds --debug | cat > dry-run.yaml
 debug:
 	helm template --name-template=$(release) $(lpath) | cat > $(release).dry-run.yaml 
 uninstall:

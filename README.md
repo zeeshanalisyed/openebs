@@ -11,6 +11,8 @@ Chart is forked from [Original Source](https://github.com/openebs/charts/tree/ma
 #### Command
 ```bash
 $ make install
+$ # or
+$ make install ns=openebs-ls release=openebs-deployment
 ```
 #### Command args
 1) **ns**=yournamespace
