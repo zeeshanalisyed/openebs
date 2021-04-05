@@ -23,7 +23,7 @@ $(yellow)Create Namespace$(end): $(blue)$(cn)$(end)\n" 1>&2)
 
 
 help:
-	@printf "\n--------> $(green)Description$(end): $(yellow)deploy redis cluster with redis operator charts$(end) <--------\n"
+	@printf "\n--------> $(green)Description$(end): $(yellow)deploy openebs$(end) <--------\n"
 	@printf " *)$(purple)$/{Parameters}$(end) : {Required} : $/{Description} : $/{Usage}\n\
 	 1)$(purple)ns$(end): required : namespace value : make $/{target} ns=yournamespace\n\
 	 2)$(purple)chart$(end): optional :Operator Chart : make $/{target} chart=desriredoperatorchart\n\
