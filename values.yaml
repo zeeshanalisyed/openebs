@@ -160,8 +160,6 @@ ndm:
     excludePaths: "/dev/loop,/dev/fd0,/dev/sr0,/dev/ram,/dev/dm-,/dev/md,/dev/rbd,/dev/zd"
   probes:
     enableSeachest: false
-  nodeSelector:
-    nodeType: storage
   tolerations: []
   healthCheck:
     initialDelaySeconds: 30

@@ -1,6 +1,6 @@
 # author: zeeshan
 # email: zeeshanelsyed@gmail.com
-ns ?= openebs
+ns ?= openebs-ls
 # helm repo add openebs https://openebs.github.io/charts
 chart ?= openebs
 release ?= openebs-storage
