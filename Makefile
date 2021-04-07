@@ -45,8 +45,8 @@ removens:
 clean:
 	rm -r $(release).dry-run.yaml 
 install:
-	$(MAKE) createns && helm install $(release) --namespace=$(ns) $(lpath) -f values.yaml --skip-crds --debug | cat > dry-run.yaml
+	helm install $(release) --namespace=$(ns) $(lpath) -f values.yaml --skip-crds --debug | cat > dry-run.yaml
 debug:
 	helm template --name-template=$(release) $(lpath) | cat > $(release).dry-run.yaml 
 uninstall:
-	helm uninstall $(release) && make clean
+	helm uninstall $(release)
